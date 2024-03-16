@@ -1,29 +1,45 @@
-const Profile = ({ username, tag, location, image, stats }) => {
+import PropTypes from 'prop-types';
+import css from './profile.module.css';
+
+const Profile = ({ name, tag, location, image, stats }) => {
   return (
-    <div>
+    <div className={css['userBox']}>
       <div>
-        <img src={image} alt="User avatar" />
-        <p>{username}</p>
-        <p> {tag}</p>
-        <p>{location}</p>
+        <img
+          className={css['imgUser']}
+          src={image}
+          alt="User avatar"
+          width="200"
+        />
+        <p className={css['userName']}>{name}</p>
+        <p className={css['user']}> {tag}</p>
+        <p className={css['user']}>{location}</p>
       </div>
 
-      <ul>
-        <li>
-          <span>followers</span>
-          <span>{stats.followers}</span>
+      <ul className={css['userStatsBox']}>
+        <li className={css['userStats']}>
+          <span className={css['Stats']}>followers</span>
+          <span className={css['StatsValue']}>{stats.followers}</span>
         </li>
-        <li>
-          <span>Views</span>
-          <span>{stats.views}</span>
+        <li className={css['userStats']}>
+          <span className={css['Stats']}>Views</span>
+          <span className={css['StatsValue']}>{stats.views}</span>
         </li>
-        <li>
-          <span>Likes</span>
-          <span>{stats.likes}</span>
+        <li className={css['userStats']}>
+          <span className={css['Stats']}>Likes</span>
+          <span className={css['StatsValue']}>{stats.likes}</span>
         </li>
       </ul>
     </div>
   );
 };
+
+// Profile.propTypes = {
+//   name: PropTypes.string.isRequired,
+//   image: PropTypes.string,
+//   tag: PropTypes.string.isRequired,
+//   location: PropTypes.string.isRequired,
+//   stats: PropTypes.number.isRequired,
+// };
 
 export default Profile;

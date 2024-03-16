@@ -1,0 +1,24 @@
+.table {
+  /* border: 2px solid black; */
+  width: 540px;
+  border-collapse: collapse;
+}
+.thead {
+  background-color: rgb(58, 57, 57);
+  color: beige;
+  font-size: 16px;
+  margin: 0;
+  border: 2px solid black;
+}
+.tableTitle {
+  border: 2px solid black;
+  margin: 0;
+}
+.tabValue td {
+  border: 2px solid black;
+  color: black;
+  font-weight: 500;
+}
+.tabValue:nth-child(even) {
+  background-color: rgb(172, 168, 168);
+}
